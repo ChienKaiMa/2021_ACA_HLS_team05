@@ -1,6 +1,6 @@
-
+// Testbench by Chien-Kai Ma
 #include <iostream>
-#include "./uncond_pass_by_ref.cpp"
+#include "./uncond_pass_by_ref.h"
 
 using namespace std;
 
