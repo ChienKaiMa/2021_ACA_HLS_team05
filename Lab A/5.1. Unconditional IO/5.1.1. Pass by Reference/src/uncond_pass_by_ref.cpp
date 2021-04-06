@@ -1,4 +1,8 @@
-/*
+// Original PATH: $MGC_HOME/shared/examples/docs/bluebook/schedule/uncond_pass_by_ref.cpp
+// Modified for Vivado HLS by Chien-Kai Ma
+
+#include "uncond_pass_by_ref.h"
+
 void accumulate(int din[4],
                 int &dout,
                 int &threshold,
@@ -12,5 +16,3 @@ void accumulate(int din[4],
     }
     dout = acc;
 }
-//PATH: $MGC_HOME/shared/examples/docs/bluebook/schedule/uncond_pass_by_ref.cpp
-*/
