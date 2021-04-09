@@ -1,4 +1,5 @@
-/*
+#include "mem_non_mutual_exclusive.h"
+
 void accumulate (int din[4],
                 int &dout,
                 bool &flag0,
@@ -12,5 +13,3 @@ void accumulate (int din[4],
     }
     dout = acc;
 }
-PATH: $MGC_HOME/shared/examples/docs/bluebook/schedule/mem_non_mutual_exclusive.cpp
-*/
