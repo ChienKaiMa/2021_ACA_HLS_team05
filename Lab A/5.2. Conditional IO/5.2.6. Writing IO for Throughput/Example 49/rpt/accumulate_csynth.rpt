@@ -1,0 +1,149 @@
+
+
+================================================================
+== Vivado HLS Report for 'accumulate'
+================================================================
+* Date:           Fri Apr  9 19:51:38 2021
+
+* Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
+* Project:        Example49
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  | 7.50 ns | 6.270 ns |   0.94 ns  |
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        4|        4| 30.000 ns | 30.000 ns |    4|    4|   none  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  | URAM|
++-----------------+---------+-------+--------+-------+-----+
+|DSP              |        -|      -|       -|      -|    -|
+|Expression       |        -|      -|       0|    247|    -|
+|FIFO             |        -|      -|       -|      -|    -|
+|Instance         |        -|      -|       -|      -|    -|
+|Memory           |        -|      -|       -|      -|    -|
+|Multiplexer      |        -|      -|       -|     81|    -|
+|Register         |        -|      -|     102|      -|    -|
++-----------------+---------+-------+--------+-------+-----+
+|Total            |        0|      0|     102|    328|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Available        |      280|    220|  106400|  53200|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Utilization (%)  |        0|      0|   ~0   |   ~0  |    0|
++-----------------+---------+-------+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------------+----------+-------+---+----+------------+------------+
+    |     Variable Name     | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------+----------+-------+---+----+------------+------------+
+    |acc_1_fu_99_p2         |     +    |      0|  0|  39|          32|          32|
+    |acc_2_fu_113_p2        |     +    |      0|  0|  39|          32|          32|
+    |acc_3_fu_125_p2        |     +    |      0|  0|  39|          32|          32|
+    |ap_block_state1        |    or    |      0|  0|   2|           1|           1|
+    |select_ln11_fu_118_p3  |  select  |      0|  0|  32|           1|          32|
+    |select_ln13_fu_130_p3  |  select  |      0|  0|  32|           1|          32|
+    |select_ln7_fu_92_p3    |  select  |      0|  0|  32|           1|          32|
+    |select_ln9_fu_105_p3   |  select  |      0|  0|  32|           1|          32|
+    +-----------------------+----------+-------+---+----+------------+------------+
+    |Total                  |          |      0|  0| 247|         101|         225|
+    +-----------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +--------------+----+-----------+-----+-----------+
+    |     Name     | LUT| Input Size| Bits| Total Bits|
+    +--------------+----+-----------+-----+-----------+
+    |ap_NS_fsm     |  33|          6|    1|          6|
+    |din_address0  |  15|          3|    2|          6|
+    |din_address1  |  15|          3|    2|          6|
+    |dout_blk_n    |   9|          2|    1|          2|
+    |flag_blk_n    |   9|          2|    1|          2|
+    +--------------+----+-----------+-----+-----------+
+    |Total         |  81|         16|    7|         22|
+    +--------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +---------------------+----+----+-----+-----------+
+    |         Name        | FF | LUT| Bits| Const Bits|
+    +---------------------+----+----+-----+-----------+
+    |ap_CS_fsm            |   5|   0|    5|          0|
+    |flag_read_reg_142    |   1|   0|    1|          0|
+    |select_ln11_reg_163  |  32|   0|   32|          0|
+    |select_ln13_reg_174  |  32|   0|   32|          0|
+    |select_ln9_reg_152   |  32|   0|   32|          0|
+    +---------------------+----+----+-----+-----------+
+    |Total                | 102|   0|  102|          0|
+    +---------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------+-----+-----+------------+--------------+--------------+
+|   RTL Ports  | Dir | Bits|  Protocol  | Source Object|    C Type    |
++--------------+-----+-----+------------+--------------+--------------+
+|ap_clk        |  in |    1| ap_ctrl_hs |  accumulate  | return value |
+|ap_rst        |  in |    1| ap_ctrl_hs |  accumulate  | return value |
+|ap_start      |  in |    1| ap_ctrl_hs |  accumulate  | return value |
+|ap_done       | out |    1| ap_ctrl_hs |  accumulate  | return value |
+|ap_idle       | out |    1| ap_ctrl_hs |  accumulate  | return value |
+|ap_ready      | out |    1| ap_ctrl_hs |  accumulate  | return value |
+|din_address0  | out |    2|  ap_memory |      din     |     array    |
+|din_ce0       | out |    1|  ap_memory |      din     |     array    |
+|din_q0        |  in |   32|  ap_memory |      din     |     array    |
+|din_address1  | out |    2|  ap_memory |      din     |     array    |
+|din_ce1       | out |    1|  ap_memory |      din     |     array    |
+|din_q1        |  in |   32|  ap_memory |      din     |     array    |
+|dout_din      | out |   32|   ap_fifo  |     dout     |    pointer   |
+|dout_full_n   |  in |    1|   ap_fifo  |     dout     |    pointer   |
+|dout_write    | out |    1|   ap_fifo  |     dout     |    pointer   |
+|flag_dout     |  in |    1|   ap_fifo  |     flag     |    pointer   |
+|flag_empty_n  |  in |    1|   ap_fifo  |     flag     |    pointer   |
+|flag_read     | out |    1|   ap_fifo  |     flag     |    pointer   |
++--------------+-----+-----+------------+--------------+--------------+
+

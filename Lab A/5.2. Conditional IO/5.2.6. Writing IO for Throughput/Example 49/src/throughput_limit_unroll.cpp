@@ -1,4 +1,5 @@
-/*
+#include "throughput_limit_unroll.h"
+
 void accumulate (int din[4],
                 int &dout,
                 bool flag[4]){
@@ -14,5 +15,4 @@ void accumulate (int din[4],
     
     dout = acc;
 }
-PATH: $MGC_HOME/shared/examples/docs/bluebook/schedule/throughput_limit_unroll.cpp
-*/
+// PATH: $MGC_HOME/shared/examples/docs/bluebook/schedule/throughput_limit_unroll.cpp
