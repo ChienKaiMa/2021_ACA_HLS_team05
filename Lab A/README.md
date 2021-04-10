@@ -1,5 +1,10 @@
 # Lab A - Mentor HLS Bluebook (v10.5b, June 2020)
+
 Team 5 游子緒 馬健凱 陳昱行
+
+## Objective
+
+Implement the examples in the bluebook, which were originally written for Catapult C Synthesis, with Vivado HLS.
 
 ## Chapter 5 - Scheduling of IO and Memories
 
