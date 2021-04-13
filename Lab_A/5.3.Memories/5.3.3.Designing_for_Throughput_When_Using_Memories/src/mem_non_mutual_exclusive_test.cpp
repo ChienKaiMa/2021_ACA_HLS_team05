@@ -11,7 +11,7 @@ int main(){
 		int out = 0;
 		bool pass = true;
 		bool flag0[4] = {1,0,1,0};
-		bool flag1[4] = {0,1,0,1};
+		bool flag1[4] = {0,1,1,1};
 		for(int i = 0;i<4;i++){
 			out = 0;
 			accumulate(din[i], out, flag0[i], flag1[i]);
