@@ -5,13 +5,13 @@
 ############################################################
 open_project Example49
 set_top accumulate
-add_files Example49/throughput_limit_unroll.cpp
 add_files Example49/throughput_limit_unroll.h
-add_files -tb Example49/throughput_limit_unroll_test.cpp
+add_files Example49/throughput_limit_unroll.cpp
+add_files -tb Example49/throughput_limit_unroll_test.cpp -cflags "-Wno-unknown-pragmas" -csimflags "-Wno-unknown-pragmas"
 open_solution "solution1"
-set_part {xc7z020clg400-1}
+set_part {xc7z020-clg400-1}
 create_clock -period 7.5 -name default
-source "./Example49/solution1/directives.tcl"
+#source "./Example49/solution1/directives.tcl"
 csim_design
 csynth_design
 cosim_design -trace_level all -tool xsim
