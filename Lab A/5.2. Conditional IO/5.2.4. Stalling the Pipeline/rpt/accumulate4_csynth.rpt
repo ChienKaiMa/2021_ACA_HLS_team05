@@ -1,12 +1,12 @@
 
 
 ================================================================
-== Vivado HLS Report for 'accumulate'
+== Vivado HLS Report for 'accumulate4'
 ================================================================
-* Date:           Tue Apr 13 11:15:51 2021
+* Date:           Tue Apr 13 11:04:41 2021
 
 * Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
-* Project:        Example47
+* Project:        Example46
 * Solution:       solution1
 * Product family: zynq
 * Target device:  xc7z020-clg400-1
@@ -49,14 +49,14 @@
 |       Name      | BRAM_18K| DSP48E|   FF   |  LUT  | URAM|
 +-----------------+---------+-------+--------+-------+-----+
 |DSP              |        -|      -|       -|      -|    -|
-|Expression       |        -|      -|       0|    111|    -|
+|Expression       |        -|      -|       0|    109|    -|
 |FIFO             |        -|      -|       -|      -|    -|
 |Instance         |        -|      -|       -|      -|    -|
 |Memory           |        -|      -|       -|      -|    -|
 |Multiplexer      |        -|      -|       -|     18|    -|
-|Register         |        -|      -|     133|      -|    -|
+|Register         |        -|      -|     131|      -|    -|
 +-----------------+---------+-------+--------+-------+-----+
-|Total            |        0|      0|     133|    129|    0|
+|Total            |        0|      0|     131|    127|    0|
 +-----------------+---------+-------+--------+-------+-----+
 |Available        |      280|    220|  106400|  53200|    0|
 +-----------------+---------+-------+--------+-------+-----+
@@ -80,15 +80,14 @@
     +----------------------------------+----------+-------+---+----+------------+------------+
     |           Variable Name          | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
     +----------------------------------+----------+-------+---+----+------------+------------+
-    |add_ln15_1_fu_105_p2              |     +    |      0|  0|  32|          32|          32|
-    |add_ln15_2_fu_109_p2              |     +    |      0|  0|  32|          32|          32|
-    |add_ln15_fu_99_p2                 |     +    |      0|  0|  39|          32|          32|
-    |ap_block_state3_pp0_stage0_iter2  |    and   |      0|  0|   2|           1|           1|
+    |add_ln13_1_fu_93_p2               |     +    |      0|  0|  32|          32|          32|
+    |add_ln13_2_fu_97_p2               |     +    |      0|  0|  32|          32|          32|
+    |add_ln13_fu_87_p2                 |     +    |      0|  0|  39|          32|          32|
     |ap_block_pp0_stage0_01001         |    or    |      0|  0|   2|           1|           1|
     |ap_block_state1_pp0_stage0_iter0  |    or    |      0|  0|   2|           1|           1|
     |ap_enable_pp0                     |    xor   |      0|  0|   2|           1|           2|
     +----------------------------------+----------+-------+---+----+------------+------------+
-    |Total                             |          |      0|  0| 111|         100|         101|
+    |Total                             |          |      0|  0| 109|          99|         100|
     +----------------------------------+----------+-------+---+----+------------+------------+
 
     * Multiplexer: 
@@ -102,21 +101,19 @@
     +------------+----+-----------+-----+-----------+
 
     * Register: 
-    +--------------------------------+----+----+-----+-----------+
-    |              Name              | FF | LUT| Bits| Const Bits|
-    +--------------------------------+----+----+-----+-----------+
-    |ack_read_reg_114                |   1|   0|    1|          0|
-    |ack_read_reg_114_pp0_iter1_reg  |   1|   0|    1|          0|
-    |add_ln15_2_reg_133              |  32|   0|   32|          0|
-    |add_ln15_reg_128                |  32|   0|   32|          0|
-    |ap_CS_fsm                       |   1|   0|    1|          0|
-    |ap_enable_reg_pp0_iter1         |   1|   0|    1|          0|
-    |ap_enable_reg_pp0_iter2         |   1|   0|    1|          0|
-    |tmp_2_reg_118                   |  32|   0|   32|          0|
-    |tmp_3_reg_123                   |  32|   0|   32|          0|
-    +--------------------------------+----+----+-----+-----------+
-    |Total                           | 133|   0|  133|          0|
-    +--------------------------------+----+----+-----+-----------+
+    +-------------------------+----+----+-----+-----------+
+    |           Name          | FF | LUT| Bits| Const Bits|
+    +-------------------------+----+----+-----+-----------+
+    |add_ln13_2_reg_117       |  32|   0|   32|          0|
+    |add_ln13_reg_112         |  32|   0|   32|          0|
+    |ap_CS_fsm                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1  |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2  |   1|   0|    1|          0|
+    |tmp_2_reg_102            |  32|   0|   32|          0|
+    |tmp_3_reg_107            |  32|   0|   32|          0|
+    +-------------------------+----+----+-----+-----------+
+    |Total                    | 131|   0|  131|          0|
+    +-------------------------+----+----+-----+-----------+
 
 
 
@@ -127,18 +124,17 @@
 +-------------+-----+-----+------------+--------------+--------------+
 |  RTL Ports  | Dir | Bits|  Protocol  | Source Object|    C Type    |
 +-------------+-----+-----+------------+--------------+--------------+
-|ap_clk       |  in |    1| ap_ctrl_hs |  accumulate  | return value |
-|ap_rst       |  in |    1| ap_ctrl_hs |  accumulate  | return value |
-|ap_start     |  in |    1| ap_ctrl_hs |  accumulate  | return value |
-|ap_done      | out |    1| ap_ctrl_hs |  accumulate  | return value |
-|ap_idle      | out |    1| ap_ctrl_hs |  accumulate  | return value |
-|ap_ready     | out |    1| ap_ctrl_hs |  accumulate  | return value |
+|ap_clk       |  in |    1| ap_ctrl_hs |  accumulate4 | return value |
+|ap_rst       |  in |    1| ap_ctrl_hs |  accumulate4 | return value |
+|ap_start     |  in |    1| ap_ctrl_hs |  accumulate4 | return value |
+|ap_done      | out |    1| ap_ctrl_hs |  accumulate4 | return value |
+|ap_idle      | out |    1| ap_ctrl_hs |  accumulate4 | return value |
+|ap_ready     | out |    1| ap_ctrl_hs |  accumulate4 | return value |
 |din_dout     |  in |  128|   ap_fifo  |      din     |    pointer   |
 |din_empty_n  |  in |    1|   ap_fifo  |      din     |    pointer   |
 |din_read     | out |    1|   ap_fifo  |      din     |    pointer   |
 |dout_din     | out |   32|   ap_fifo  |     dout     |    pointer   |
 |dout_full_n  |  in |    1|   ap_fifo  |     dout     |    pointer   |
 |dout_write   | out |    1|   ap_fifo  |     dout     |    pointer   |
-|ack          |  in |    1|   ap_none  |      ack     |    pointer   |
 +-------------+-----+-----+------------+--------------+--------------+
 
